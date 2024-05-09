@@ -3,6 +3,9 @@
     font-family: "poppins", "sans-serif";
     margin: 0;
 }
+html{
+    overflow-x: hidden;
+}
 nav{
     background-color: rgba(255, 255, 255, 0);
     width: 100%;
@@ -11,7 +14,6 @@ nav{
     z-index: 12;
 }
 nav .menu{
-    max-width: 1250;
     margin: auto;
     display: flex;
     align-items: center;
@@ -23,6 +25,10 @@ nav .menu{
     color: rgb(161, 161, 161);
     font-size: 35px;
     font-weight: 600;
+    transition: .3s;
+}
+.menu .logo a:hover{
+    letter-spacing: 2px;
 }
 .menu .logo a .company{
     color: red;
@@ -37,26 +43,30 @@ nav .menu{
 .menu ul li a {
     transition: .3s;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: gray;
     font-size: 18px;
     padding: 8px 15px;
-    border-radius: 50px;
     transition: all 0,3s ease;
 }
-.menu ul li a:hover{
-    transition: .3s;
-   background-color: rgb(255, 255, 255);
-   color: black; 
+.menu ul li a:hover,
+.menu ul li a.active{
+    color: transparent;
+    letter-spacing: 5px;
+    border-bottom: 3px solid white;
+    -webkit-text-stroke: 1px white;
 }
 .menu ul li a.buynow{
     background-color: none;
 }
-.menu ul li a.buynow:hover{
-    transition: .3s;
-    background-color: gray;
+.menu ul li a.buynow:hover,
+.menu ul li a.active{
+    color: transparent;
+    letter-spacing: 5px;
+    border-bottom: 3px solid deepskyblue;
+    -webkit-text-stroke: 1px deepskyblue;
 }
 .img{
-   background-image: url("city\ background.avif");
+   background-image: url("img/city\ background.avif");
    height: 100vh;
    width: 100%;
    background-position: center;
@@ -82,10 +92,16 @@ nav .menu{
 .center .title{
     color: rgb(193, 193, 193);
     font-size: 55px;
-    font-weight: 600;  
+    font-weight: 600;
 }
 .center .title .company2{
     color: red;
+    transition: .5s;
+    cursor: pointer;
+}
+.center .title .company2:hover{
+    letter-spacing: 5px;
+    -webkit-text-stroke: 0.1px white;
 }
 .center .subtitle{
     color: rgb(190, 190, 190);
@@ -112,6 +128,8 @@ nav .menu{
 .center .btn button:hover{
     color: white;
     background:none;
+    letter-spacing: 1px;
+    transition: .3 ease-in-out;
 }
 .container {
     width: 100%;
@@ -121,30 +139,86 @@ nav .menu{
     background-size: 30px 30px;
     background-position: -5px -5px
 }
+.about{
+    margin: auto;
+    margin-top: 5%;
+}
+.title2{
+    color: white;
+    text-align: center;
+    transition: .3s;
+}
+.title2:hover{
+    letter-spacing: 3px;
+    cursor: default;
+}
+.img2{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+}
+.text{
+    color: white;
+    text-align: center;
+}
 .xeno{
     margin: auto;
     text-align: center;
     color: white;
+    margin-bottom: 5%;
+    transition: .3s;
 }
-.doc{
-    text-align: center;
-    color: white;
-} 
-table tr th .icon{
-    width: 120px;
-    height: 120px;
-    text-align: center;
+.xeno:hover{
+    letter-spacing: 2px;
+    cursor:default;
 }
-.text{
+.row{
+    margin: 0 1.5rem 0 1.5rem ;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.card .oke{
+    flex: 1rem;
+    background: gray;
+    padding: 1rem;
     text-align: center;
-    color: white;
+    transition: .3s ease;
+    border-radius: 2rem;
+}
+.card .oke:hover{
+    transform: scale(1.10);
+}
+.oke img{
+    width: 3rem;
+    height: 4rem;
+}
+.oke h3{
+    font-size: 1rem;
+}
+.oke p{
+    font-size: 1rem;
+    margin: 1rem 0 1rem;
 }
 .footer{
     color: white;
     padding: 2rem;
-    background-image: linear-gradient(black, gray);
+    background-image: linear-gradient(transparent, gray);
     text-align: center;
     margin-top: 10px;
     font-size: 1.5rem;
     font-family:monospace
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(black, gray);
+    border-radius: 10px;
 }
